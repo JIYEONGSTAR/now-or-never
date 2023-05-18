@@ -1,0 +1,12 @@
+{
+  "name": "non-mono",
+  "packageManager": "yarn@3.5.1",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
