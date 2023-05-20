@@ -1,3 +1,3 @@
-export const libFunc = () => {
-  return "hello from lib";
+export const sayHello = (name = 'lib') => {
+  return `hello ${name}`;
 };
