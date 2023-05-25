@@ -1,29 +1,17 @@
-import { PageObjectResponse, RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import Image from 'next/image';
 import React, { use } from 'react';
 import { headers } from '@/lib';
-type Phone = {
-  id: string;
-  type: 'phone_number';
-  phone_number: string;
-};
-type Name = {
-  type: 'title';
-  title: RichTextItemResponse[];
-  id: string;
-};
-type Role = {
-  type: 'select';
-  select: { id: string; name: '멤버' | '회장'; color: string };
-  id: string;
-};
 
 const Member = ({ pageUrl }: { pageUrl: string }) => {
   const member = use(getMember(pageUrl));
+  console.log(member);
   const image = (member.cover?.type === 'file' && member.cover?.file.url) || '';
-  const phone: Phone = member.properties['전화번호'] as Phone;
-  const name: Name = member.properties['Name'] as Name;
-  const role: Role = member.properties['역할'] as Role;
+  const name = member.properties['Name'].type === 'title' && member.properties['Name'].title[0].plain_text;
+  const phoneNumber =
+    member.properties['전화번호'].type === 'phone_number' && member.properties['전화번호'].phone_number;
+  const role = member.properties['역할'].type === 'select' && member.properties['역할'].select?.name;
+
   return (
     <li>
       <div className="flex items-center gap-x-6">
@@ -38,9 +26,9 @@ const Member = ({ pageUrl }: { pageUrl: string }) => {
           alt=""
         />
         <div>
-          <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{name.title[0].plain_text}</h3>
-          <p>{phone['phone_number']}</p>
-          <p className="text-sm font-semibold leading-6 text-indigo-600"> {role.select.name}</p>
+          <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{name}</h3>
+          <p>{phoneNumber}</p>
+          <p className="text-sm font-semibold leading-6 text-indigo-600"> {role}</p>
         </div>
       </div>
     </li>
