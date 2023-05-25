@@ -5,6 +5,7 @@ import Member from '@/components/Member';
 import { headers } from '@/lib';
 const page = () => {
   const users = use(fetchData());
+
   return (
     <div className="py-24 bg-white sm:py-32">
       <div className="grid px-6 mx-auto max-w-7xl gap-x-8 gap-y-20 lg:px-8 xl:grid-cols-3">

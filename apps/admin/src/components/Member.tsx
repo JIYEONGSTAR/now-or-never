@@ -1,4 +1,5 @@
 import { PageObjectResponse, RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import Image from 'next/image';
 import React, { use } from 'react';
 import { headers } from '@/lib';
 type Phone = {
@@ -19,21 +20,23 @@ type Role = {
 
 const Member = ({ pageUrl }: { pageUrl: string }) => {
   const member = use(getMember(pageUrl));
+  const image = (member.cover?.type === 'file' && member.cover?.file.url) || '';
   const phone: Phone = member.properties['전화번호'] as Phone;
   const name: Name = member.properties['Name'] as Name;
   const role: Role = member.properties['역할'] as Role;
-  console.log(role);
   return (
     <li>
       <div className="flex items-center gap-x-6">
-        {/* <Image
+        <Image
           width={100}
           height={100}
           className="rounded-full"
-          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          src={
+            image ||
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+          }
           alt=""
         />
-          */}
         <div>
           <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{name.title[0].plain_text}</h3>
           <p>{phone['phone_number']}</p>
