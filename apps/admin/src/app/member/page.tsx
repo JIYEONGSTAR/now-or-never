@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import React from 'react';
 import { use } from 'react';
 import Member from '@/components/member/Member';
+// import MemberList from '@/components/member/MemberList';
 import { headers } from '@/lib';
 const inter = Inter({ subsets: ['latin'] });
 const page = () => {
@@ -10,7 +11,7 @@ const page = () => {
 
   return (
     <main className={`flex h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
-      <div className="py-24  sm:py-32">
+      <div className="py-24 sm:py-32">
         <div className="grid px-6 mx-auto max-w-7xl gap-x-8 gap-y-20 lg:px-8 xl:grid-cols-3">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">NON-Team</h2>
@@ -23,6 +24,7 @@ const page = () => {
           </ul>
         </div>
       </div>
+      {/* <MemberList /> */}
     </main>
   );
 };
