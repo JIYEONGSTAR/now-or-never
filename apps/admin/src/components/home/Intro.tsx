@@ -4,10 +4,10 @@ import React from 'react';
 import Animation from '@/components/lottie/animation';
 const Intro = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font dark:text-gray-50">
       <div className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row">
         <div className="flex flex-col items-center w-screen mb-16 text-center lg:flex-grow md:w-3/4 lg:pr-24 md:pr-16 md:items-start md:text-left md:mb-0">
-          <h1 className="mb-4 text-3xl font-medium text-gray-900 title-font sm:text-4xl">운동을 하고 싶지만,</h1>
+          <h1 className="mb-4 text-3xl font-medium title-font sm:text-4xl">운동을 하고 싶지만,</h1>
           <p className="mb-8 leading-relaxed">
             <p>어떻게 해야할지 모르겠다면?</p>
             <p>혼자 하기는 부담스럽다면?</p>

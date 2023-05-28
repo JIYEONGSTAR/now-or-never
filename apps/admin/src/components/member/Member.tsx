@@ -26,7 +26,7 @@ const Member = ({ pageUrl }: { pageUrl: string }) => {
           alt=""
         />
         <div>
-          <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{name}</h3>
+          <h3 className="text-base font-semibold leading-7 tracking-tight">{name}</h3>
           <p>{phoneNumber}</p>
           <p className="text-sm font-semibold leading-6 text-indigo-600"> {role}</p>
         </div>
