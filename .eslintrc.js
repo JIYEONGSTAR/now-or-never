@@ -50,7 +50,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': [
       'error',
       {
-        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase', 'snake_case'],
         selector: 'variable',
         leadingUnderscore: 'allow',
       },

@@ -1,20 +1,49 @@
+'use client';
+import Image from 'next/image';
+import { useState } from 'react';
 import React from 'react';
-
-const MemberItem = () => {
+import Modal from '../ui/Modal';
+interface Props {
+  image: string;
+  name: string;
+  phone_number: string;
+  role: string;
+}
+const MemberItem = ({ image, name, phone_number, role }: Props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const openModal = () => {
+    console.log('Click');
+    setIsVisible(true);
+  };
   return (
-    <div className="w-full p-2 lg:w-1/3 md:w-1/2">
-      <div className="flex items-center h-full p-4 border border-gray-200 rounded-lg">
-        <img
-          alt="team"
-          className="flex-shrink-0 object-cover object-center w-16 h-16 mr-4 bg-gray-100 rounded-full"
-          src="https://dummyimage.com/108x98"
-        />
-        <div className="flex-grow">
-          <h2 className="font-medium text-gray-900 title-font">000</h2>
-          <p className="text-gray-500">LEADER</p>
+    <>
+      <li onClick={() => openModal()} className="cursor-pointer">
+        <div className="flex items-center gap-x-6">
+          <Image
+            width={100}
+            height={100}
+            className="rounded-full"
+            src={
+              image ||
+              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+            }
+            alt=""
+          />
+          <div>
+            <h3 className="text-base font-semibold leading-7 tracking-tight">{name}</h3>
+            <p>{phone_number}</p>
+            <p className="text-sm font-semibold leading-6 text-indigo-600"> {role}</p>
+          </div>
         </div>
-      </div>
-    </div>
+      </li>
+      <Modal isVisible={isVisible} onClose={() => setIsVisible(false)}>
+        <div>
+          <h3 className="text-base font-semibold leading-7 tracking-tight">{name}</h3>
+          <p>{phone_number}</p>
+          <p className="text-sm font-semibold leading-6 text-indigo-600"> {role}</p>
+        </div>
+      </Modal>
+    </>
   );
 };
 

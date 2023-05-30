@@ -5,5 +5,3 @@ export const headers = {
   'Notion-Version': '2022-06-28',
   'Content-Type': 'application/json',
 };
-
-console.log('fetch', NOTION_TOKEN);

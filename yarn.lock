@@ -271,7 +271,6 @@ __metadata:
     eslint: 8.41.0
     eslint-config-next: 13.4.3
     next: 13.4.3
-    notion-types: ^6.16.0
     postcss: 8.4.23
     react: 18.2.0
     react-dom: 18.2.0
@@ -3228,13 +3227,6 @@ __metadata:
   version: 0.1.2
   resolution: "normalize-range@npm:0.1.2"
   checksum: 9b2f14f093593f367a7a0834267c24f3cb3e887a2d9809c77d8a7e5fd08738bcd15af46f0ab01cc3a3d660386f015816b5c922cea8bf2ee79777f40874063184
-  languageName: node
-  linkType: hard
-
-"notion-types@npm:^6.16.0":
-  version: 6.16.0
-  resolution: "notion-types@npm:6.16.0"
-  checksum: fd117741507d75f91d59abca71e7ac09d99b2cfd174721650bf874eaa3ab1d3115c198edd30852b82fc206ec8f3f4b13ade17f606f3c55878f3920a7979fbbee
   languageName: node
   linkType: hard
 

@@ -9,11 +9,11 @@ const Intro = () => {
         <div className="flex flex-col items-center w-screen mb-16 text-center lg:flex-grow md:w-3/4 lg:pr-24 md:pr-16 md:items-start md:text-left md:mb-0">
           <h1 className="mb-4 text-3xl font-medium title-font sm:text-4xl">운동을 하고 싶지만,</h1>
           <p className="mb-8 leading-relaxed">
-            <p>어떻게 해야할지 모르겠다면?</p>
-            <p>혼자 하기는 부담스럽다면?</p>
-            <p>동기부여가 되지 않는다면? </p>
-            <p>운동을 할 공간이 없다면?</p>
-            <p> NON과함께라면, 이 모든 것들을 해결할 수 있습니다.</p>
+            <span>어떻게 해야할지 모르겠다면?</span>
+            <span>혼자 하기는 부담스럽다면?</span>
+            <span>동기부여가 되지 않는다면? </span>
+            <span>운동을 할 공간이 없다면?</span>
+            <span> NON과함께라면, 이 모든 것들을 해결할 수 있습니다.</span>
           </p>
           <div className="flex justify-center">
             <button className="inline-flex px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">

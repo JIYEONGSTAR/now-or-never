@@ -1,14 +1,13 @@
-import { PartialPageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import { PartialPageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { Inter } from 'next/font/google';
 import React from 'react';
 import { use } from 'react';
 import Member from '@/components/member/Member';
 // import MemberList from '@/components/member/MemberList';
-import { headers } from '@/lib';
+import { fetchData } from '@/lib/getMemberPage';
 const inter = Inter({ subsets: ['latin'] });
 const page = () => {
   const users = use(fetchData());
-
   return (
     <main className={`flex h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
       <div className="py-24 sm:py-32">
@@ -24,21 +23,8 @@ const page = () => {
           </ul>
         </div>
       </div>
-      {/* <MemberList /> */}
     </main>
   );
 };
 
 export default page;
-
-export async function fetchData() {
-  const res = await fetch(`https://api.notion.com/v1/databases/e7c9516055cd4c7aba5dbaf6f616db03/query`, {
-    method: 'POST',
-    headers,
-    cache: 'force-cache',
-  });
-
-  const data = await res.json();
-
-  return data as QueryDatabaseResponse;
-}

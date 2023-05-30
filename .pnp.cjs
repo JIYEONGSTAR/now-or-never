@@ -403,7 +403,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.41.0"],\
             ["eslint-config-next", "virtual:9f83a5eeb0a7bead6772f222b1fe3b656fc2317bce598b3c1cd6432d6b281837a32c72fa894c760c92e8de62bd46124733b34223bfe165ed5cbd517d02cac9e5#npm:13.4.3"],\
             ["next", "virtual:9f83a5eeb0a7bead6772f222b1fe3b656fc2317bce598b3c1cd6432d6b281837a32c72fa894c760c92e8de62bd46124733b34223bfe165ed5cbd517d02cac9e5#npm:13.4.3"],\
-            ["notion-types", "npm:6.16.0"],\
             ["postcss", "npm:8.4.23"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:52fbdb8c2296acc50d769011ecae16f34e45cf6c01a13313272bac17795e5e6c662aba407f2d0a6ef17f5ab999572af9d3848dfa5ecfc21b5704b1d0c33350cc#npm:18.2.0"],\
@@ -4134,15 +4133,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/normalize-range-npm-0.1.2-bec5e259e2-9b2f14f093.zip/node_modules/normalize-range/",\
           "packageDependencies": [\
             ["normalize-range", "npm:0.1.2"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["notion-types", [\
-        ["npm:6.16.0", {\
-          "packageLocation": "./.yarn/cache/notion-types-npm-6.16.0-a749577af0-fd11774150.zip/node_modules/notion-types/",\
-          "packageDependencies": [\
-            ["notion-types", "npm:6.16.0"]\
           ],\
           "linkType": "HARD"\
         }]\
